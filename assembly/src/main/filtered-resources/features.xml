@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features>
+
+    <!-- Add repositories here -->
+
+    <!--
+    <repository>mvn:org.apache.karaf.assemblies.features/standard/${karaf.version}/xml/features</repository>
+    -->
+
+    <!-- Add SilkMQ Features here -->
+
+    <!--
+    <feature name="silkmq-core" version="${project.version}" resolver='(obr)'>
+        <bundle></bundle>
+    </feature>
+    -->
+
+</features>

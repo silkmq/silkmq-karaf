@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<assembly>
+
+    <id>unix-bin</id>
+
+    <formats>
+        <format>tar.gz</format>
+    </formats>
+
+    <fileSets>
+
+        <!-- Expanded Karaf Runtime -->
+        <fileSet>
+            <directory>target/dependencies/unix/apache-karaf-${karaf.version}</directory>
+            <outputDirectory></outputDirectory>
+            <excludes>
+                <exclude>**/demos/**</exclude>
+                <exclude>bin/**</exclude>
+                <exclude>etc/org.ops4j.pax.logging.cfg</exclude>
+                <exclude>LICENSE</exclude>
+                <exclude>NOTICE</exclude>
+                <exclude>README</exclude>
+                <exclude>RELEASE-NOTES</exclude>
+                <exclude>karaf-manual*.html</exclude>
+                <exclude>karaf-manual*.pdf</exclude>
+            </excludes>
+        </fileSet>
+
+        <!-- Copy over bin/* separately to get the correct file mode -->
+        <fileSet>
+            <directory>target/dependencies/unix/apache-karaf-${karaf.version}</directory>
+            <outputDirectory></outputDirectory>
+            <includes>
+                <include>bin/admin</include>
+                <include>bin/karaf</include>
+                <!-- we need this one in here for admin:create'd instances to work -->
+                <include>bin/start</include>
+                <include>bin/stop</include>
+            </includes>
+            <fileMode>0755</fileMode>
+        </fileSet>
+
+        <!-- Copy over jar files -->
+        <fileSet>
+            <directory>target/dependencies</directory>
+            <includes>
+                <include>silkmq-branding.jar</include>
+            </includes>
+            <outputDirectory>/lib/</outputDirectory>
+        </fileSet>
+
+        <!-- Copy license and other files from root -->
+        <fileSet>
+            <directory>${basedir}/..</directory>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>README.txt</include>
+                <include>LICENSE.txt</include>
+                <include>NOTICE.txt</include>
+                <!--include>RELEASE*</include-->
+            </includes>
+            <lineEnding>unix</lineEnding>
+            <fileMode>0644</fileMode>
+        </fileSet>
+
+        <!-- Copy over the container README.txt -->
+        <fileSet>
+            <directory>${basedir}</directory>
+            <outputDirectory></outputDirectory>
+            <includes>
+                <include>README.txt</include>
+            </includes>
+            <lineEnding>unix</lineEnding>
+            <fileMode>0644</fileMode>
+        </fileSet>
+
+        <fileSet>
+            <directory>src/main/distribution/text</directory>
+            <outputDirectory>/</outputDirectory>
+            <fileMode>0644</fileMode>
+        </fileSet>
+        <fileSet>
+            <directory>target/classes/etc</directory>
+            <outputDirectory>/etc/</outputDirectory>
+            <lineEnding>unix</lineEnding>
+            <fileMode>0644</fileMode>
+        </fileSet>
+
+        <fileSet>
+            <directory>target/features-repo</directory>
+            <outputDirectory>/system</outputDirectory>
+        </fileSet>
+
+    </fileSets>
+
+    <files>
+        <file>
+            <source>${basedir}/target/dependencies/unix/apache-karaf-${karaf.version}/bin/karaf</source>
+            <outputDirectory>/bin</outputDirectory>
+            <destName>silkmq</destName>
+            <fileMode>0755</fileMode>
+            <lineEnding>unix</lineEnding>
+        </file>
+    </files>
+
+    <dependencySets>
+
+    </dependencySets>
+
+</assembly>
