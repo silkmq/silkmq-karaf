@@ -5,13 +5,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <parent>
-        <groupId>com.silkmq</groupId>
+        <groupId>org.silkmq</groupId>
         <artifactId>silkmq-karaf</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.silkmq</groupId>
+    <groupId>org.silkmq</groupId>
     <artifactId>silkmq-branding</artifactId>
     <name>SilkMQ Karaf Distribution :: Branding</name>
     <packaging>jar</packaging>
