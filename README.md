@@ -1,0 +1,2 @@
+# silkmq-karaf
+Container
