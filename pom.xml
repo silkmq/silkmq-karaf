@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <groupId>com.silkmq</groupId>
+        <artifactId>silkmq-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.silkmq</groupId>
+    <artifactId>silkmq-karaf</artifactId>
+    <name>SilkMQ Karaf Distribution :: Parent</name>
+    <packaging>pom</packaging>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <properties>
+        <!-- Define or override properties here  -->
+    </properties>
+
+    <modules>
+        <module>branding</module>
+        <module>assembly</module>
+    </modules>
+
+    <scm>
+        <url>https://github.com/silkmq/silkmq-karaf.git</url>
+        <connection>scm:git:git@github.com:silkmq/silkmq-karaf.git</connection>
+        <developerConnection>scm:git:git@github.com:silkmq/silkmq-karaf.git</developerConnection>
+        <tag>silkmq-karaf-0.0.1</tag>
+    </scm>
+
+</project>
