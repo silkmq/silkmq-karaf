@@ -47,13 +47,13 @@
             <includes>
                 <include>silkmq-branding.jar</include>
             </includes>
-            <outputDirectory>/lib/</outputDirectory>
+            <outputDirectory>lib/</outputDirectory>
         </fileSet>
 
         <!-- Copy license and other files from root -->
         <fileSet>
             <directory>${basedir}/..</directory>
-            <outputDirectory>/</outputDirectory>
+            <outputDirectory></outputDirectory>
             <includes>
                 <include>README.txt</include>
                 <include>LICENSE.txt</include>
@@ -77,19 +77,19 @@
 
         <fileSet>
             <directory>src/main/distribution/text</directory>
-            <outputDirectory>/</outputDirectory>
+            <outputDirectory></outputDirectory>
             <fileMode>0644</fileMode>
         </fileSet>
         <fileSet>
             <directory>target/classes/etc</directory>
-            <outputDirectory>/etc/</outputDirectory>
+            <outputDirectory>etc/</outputDirectory>
             <lineEnding>unix</lineEnding>
             <fileMode>0644</fileMode>
         </fileSet>
 
         <fileSet>
             <directory>target/features-repo</directory>
-            <outputDirectory>/system</outputDirectory>
+            <outputDirectory>system</outputDirectory>
         </fileSet>
 
     </fileSets>
@@ -97,7 +97,7 @@
     <files>
         <file>
             <source>${basedir}/target/dependencies/unix/apache-karaf-${karaf.version}/bin/karaf</source>
-            <outputDirectory>/bin</outputDirectory>
+            <outputDirectory>bin/</outputDirectory>
             <destName>silkmq</destName>
             <fileMode>0755</fileMode>
             <lineEnding>unix</lineEnding>
